@@ -1,1 +1,0 @@
-# hekaya_app
