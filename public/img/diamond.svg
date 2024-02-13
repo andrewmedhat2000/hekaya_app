@@ -1,0 +1,68 @@
+<svg id="编组_34备份_2" data-name="编组 34备份 2" xml:space="preserve" preserveAspectRatio="none" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" width="17.033" height="17.128" viewBox="0 0 17.033 17.128">
+  <defs>
+    <linearGradient id="linear-gradient" x1="0.689" y1="0.135" x2="0.102" y2="1" gradientUnits="objectBoundingBox">
+      <stop offset="0" stop-color="#ff5f0e"/>
+      <stop offset="1" stop-color="#fea325"/>
+    </linearGradient>
+    <clipPath id="clip-path">
+      <path id="蒙版" d="M7.219,0,0,8.233V.823Z" transform="translate(0 0)" fill="url(#linear-gradient)"/>
+    </clipPath>
+    <linearGradient id="linear-gradient-3" x1="0.787" y1="0.134" x2="0.077" y2="0.688" gradientUnits="objectBoundingBox">
+      <stop offset="0" stop-color="#ef450c"/>
+      <stop offset="1" stop-color="#ff842c"/>
+    </linearGradient>
+    <linearGradient id="linear-gradient-4" x1="0.5" y1="1" x2="0.5" gradientUnits="objectBoundingBox">
+      <stop offset="0" stop-color="#fffa5e"/>
+      <stop offset="1" stop-color="#ffda47"/>
+    </linearGradient>
+    <linearGradient id="linear-gradient-5" x1="0.381" y1="0.805" x2="0.775" y2="0.27" gradientUnits="objectBoundingBox">
+      <stop offset="0" stop-color="#ffdc23"/>
+      <stop offset="1" stop-color="#ffb92c"/>
+    </linearGradient>
+    <linearGradient id="linear-gradient-6" x1="0.737" y1="0.143" x2="0" y2="0.917" gradientUnits="objectBoundingBox">
+      <stop offset="0" stop-color="#ff870e"/>
+      <stop offset="1" stop-color="#fea325"/>
+    </linearGradient>
+    <linearGradient id="linear-gradient-7" x1="0.664" y1="0.824" x2="0.199" y2="0.27" xlink:href="#linear-gradient-5"/>
+    <linearGradient id="linear-gradient-8" x1="0.423" y1="0.15" x2="0.844" y2="0.798" gradientUnits="objectBoundingBox">
+      <stop offset="0" stop-color="#fffa60"/>
+      <stop offset="1" stop-color="#ffd44b"/>
+    </linearGradient>
+    <filter id="蒙版-2">
+      <feOffset dx="2" dy="2" input="SourceAlpha"/>
+      <feGaussianBlur stdDeviation="4" result="blur"/>
+      <feFlood flood-color="#fff" flood-opacity="0.706" result="color"/>
+      <feComposite operator="out" in="SourceGraphic" in2="blur"/>
+      <feComposite operator="in" in="color"/>
+      <feComposite operator="in" in2="SourceGraphic"/>
+    </filter>
+    <clipPath id="clip-path-2">
+      <path id="蒙版-3" data-name="蒙版" d="M1.938,2.855,0,1.427,1.712,0H8.275L9.936,1.427,7.8,2.855Z" fill="none"/>
+    </clipPath>
+  </defs>
+  <rect id="矩形" width="17.033" height="17.128" fill="#d8d8d8" opacity="0"/>
+  <g id="编组_33" data-name="编组 33" transform="translate(1.419 2.141)">
+    <g id="椭圆形" transform="translate(7.219 4.843)">
+      <path id="蒙版-4" data-name="蒙版" d="M7.219,0,0,8.233V.823Z" transform="translate(0 0)" fill="url(#linear-gradient)"/>
+      <g id="椭圆形-2" data-name="椭圆形" transform="translate(0 0)" clip-path="url(#clip-path)">
+        <path id="椭圆形-3" data-name="椭圆形" d="M1.441,6.454c.772.01,1.379-1.426,1.356-3.209S2.129.01,1.357,0-.023,1.427,0,3.209.669,6.444,1.441,6.454Z" transform="translate(6.07 1.257) rotate(45)" fill="#ff4dc4" opacity="0.6"/>
+      </g>
+    </g>
+    <path id="路径_4备份" data-name="路径 4备份" d="M-25.6,0l7.219,8.233V.823Z" transform="translate(25.598 4.843)" fill="url(#linear-gradient-3)"/>
+    <path id="矩形-2" data-name="矩形" d="M0,0H8.281V3.527H.212Z" transform="translate(2.897 2.769)" fill="url(#linear-gradient-4)"/>
+    <path id="矩形-3" data-name="矩形" d="M2.133,0l2,1.226L3.109,4.868,0,3.415Z" transform="translate(0 1.427)" fill="url(#linear-gradient-5)"/>
+    <path id="三角形" d="M4.065,0l4,6.78H0Z" transform="translate(11.178 13.075) rotate(180)" fill="url(#linear-gradient-6)"/>
+    <path id="矩形备份_38" data-name="矩形备份 38" d="M-14.226,0l-2.289.994,1.4,3.874,3.26-1.453Z" transform="translate(26.295 1.427)" fill="url(#linear-gradient-7)"/>
+    <g id="椭圆形-4" data-name="椭圆形" transform="translate(2.133)">
+      <g id="蒙版-5" data-name="蒙版" transform="translate(0)">
+        <path id="蒙版-6" data-name="蒙版" d="M1.712,0H8.275L9.936,1.427,7.8,2.855H1.938L0,1.427Z" fill="url(#linear-gradient-8)"/>
+        <g transform="matrix(1, 0, 0, 1, -3.55, -2.14)" filter="url(#蒙版-2)">
+          <path id="蒙版-7" data-name="蒙版" d="M1.712,0H8.275L9.936,1.427,7.8,2.855H1.938L0,1.427Z" transform="translate(3.55 2.14)" fill="#fff"/>
+        </g>
+      </g>
+      <g id="椭圆形-5" data-name="椭圆形" transform="translate(0)" clip-path="url(#clip-path-2)">
+        <ellipse id="椭圆形-6" data-name="椭圆形" cx="4.777" cy="2.288" rx="4.777" ry="2.288" transform="translate(-2.346 -2.615)" fill="#fffae6"/>
+      </g>
+    </g>
+  </g>
+</svg>

@@ -1,0 +1,4113 @@
+{
+    "openapi": "3.0.0",
+    "info": {
+        "title": "Middle",
+        "contact": {},
+        "version": "1.0"
+    },
+    "servers": [
+        {
+            "url": "http://middle-testing.restart-technology.com/api",
+            "description": " {{DEVELOPMENT SERVER}}",
+            "variables": {}
+        },
+        {
+            "url": "http://middle.restart-technology.com/api",
+            "description": " {{Live SERVER}}",
+            "variables": {}
+        },
+        {
+            "url": "https://7ekayh-games.com/api",
+            "description": " {{Live SERVER}}",
+            "variables": {}
+        },
+        {
+            "url": "http://localhost:8080/restart/middle/public/api",
+            "description": " {{FADY LOCALHOST SERVER}}",
+            "variables": {}
+        },
+        {
+            "url": "http://localhost/projects/middle-backend/public/api",
+            "description": " {{LOCALHOST SERVER}}",
+            "variables": {}
+        },
+        {
+            "url": "http://localhost:8080/projects/middle-backend/public/api",
+            "description": " {{LOCALHOST SERVER}}",
+            "variables": {}
+        },
+        {
+            "url": "http://localhost/middle-backend/public/api",
+            "description": " {{LOCALHOST SERVER}}",
+            "variables": {}
+        },
+        {
+            "url": "http://127.0.0.1:8000/api",
+            "description": " {{Ready LOCALHOST SERVER}}",
+            "variables": {}
+        }
+
+
+    ],
+    "paths": {
+
+
+        "/auth/login": {
+            "post": {
+                "tags": [
+                    "Auth"
+                ],
+                "summary": "Login Manual",
+                "description": "Used to login manual account with regular email and password\r\n",
+                "operationId": "LoginManual",
+                "parameters": [],
+                "requestBody": {
+                    "content": {
+                        "application/x-www-form-urlencoded": {
+                            "encoding": {},
+                            "schema": {
+                                "required": [
+                                    "user_name",
+                                    "password"
+                                ],
+                                "type": "object",
+                                "properties": {
+                                    "user_name": {
+                                        "type": "string",
+                                        "example": "super_admin"
+                                    },
+                                    "password": {
+                                        "type": "integer",
+                                        "format": "int32",
+                                        "example": 123456
+                                    },
+                                    "mobile_uuid": {
+                                        "type": "string",
+                                        "example": "dsadaskf-dsadas-fdsadas-fdasf"
+                                    }
+                                }
+                            }
+                        }
+                    },
+                    "required": false,
+                    "x-send-file-in-body": false
+                },
+                "responses": {
+                    "200": {
+                        "description": "",
+                        "content": {
+                            "application/json": {
+                                "schema": {}
+                            }
+                        },
+                        "headers": {}
+                    }
+                },
+                "deprecated": false
+            }
+        },
+        "/auth/social/login": {
+            "post": {
+                "tags": [
+                    "Auth"
+                ],
+                "summary": "Login Social",
+                "description": "Used to login social account with social_id and social_type\r\n",
+                "operationId": "LoginSocial",
+                "parameters": [],
+                "requestBody": {
+                    "content": {
+                        "application/x-www-form-urlencoded": {
+                            "encoding": {},
+                            "schema": {
+                                "required": [
+                                    "social_id",
+                                    "social_type"
+                                ],
+                                "type": "object",
+                                "properties": {
+                                    "social_id": {
+                                        "type": "integer",
+                                        "format": "int32",
+                                        "example": 123
+                                    },
+                                    "social_type": {
+                                        "type": "string",
+                                        "example": "google"
+                                    },
+                                    "mobile_uuid": {
+                                        "type": "string",
+                                        "example": "dsadaskf-dsadas-fdsadas-fdasf"
+                                    },
+                                    "fcm_key": {
+                                        "type": "string",
+                                        "example": "fUsiLm4SvJg:APA91bFJu0gq1aZh6tYomGHqO9_57EXrgCLTIj6hmRgW-jkcvoaPy8vJePLtZXx2dLDzoqip0n_7aFBfe9XlIznubCjEMPJnITsx87UUQdcJ2AUitZgiiaMz6s36M_VH-7KR7iwrm14k"
+                                    }
+                                }
+                            }
+                        }
+                    },
+                    "required": false,
+                    "x-send-file-in-body": false
+                },
+                "responses": {
+                    "200": {
+                        "description": "",
+                        "content": {
+                            "application/json": {
+                                "schema": {}
+                            }
+                        },
+                        "headers": {}
+                    }
+                },
+                "deprecated": false
+            }
+        },
+
+        "/auth/reset-password": {
+            "post": {
+                "tags": [
+                    "Auth"
+                ],
+                "summary": "Reset Password",
+                "operationId": "ResetPassword",
+                "parameters": [],
+                "requestBody": {
+                    "content": {
+                        "application/x-www-form-urlencoded": {
+                            "encoding": {},
+                            "schema": {
+                                "required": [
+                                    "email"
+                                ],
+                                "type": "object",
+                                "properties": {
+                                    "email": {
+                                        "type": "string",
+                                        "example": "almalky@site.com"
+                                    }
+                                }
+                            }
+                        }
+                    },
+                    "required": false,
+                    "x-send-file-in-body": false
+                },
+                "responses": {
+                    "200": {
+                        "description": "",
+                        "content": {
+                            "application/json": {
+                                "schema": {}
+                            }
+                        },
+                        "headers": {}
+                    }
+                },
+                "deprecated": false
+            }
+        },
+
+
+        "/auth/reset": {
+            "post": {
+                "tags": [
+                    "Auth"
+                ],
+                "summary": "Reset",
+                "operationId": "Reset",
+                "parameters": [],
+                "requestBody": {
+                    "content": {
+                        "application/x-www-form-urlencoded": {
+                            "encoding": {},
+                            "schema": {
+                                "required": [
+                                    "email",
+                                    "password",
+                                    "token",
+                                    "password_confirmation"
+                                ],
+                                "type": "object",
+                                "properties": {
+                                    "email": {
+                                        "type": "string",
+                                        "example": "ah_sa_troy2009@yahoo.com"
+                                    },
+                                    "password": {
+                                        "type": "integer",
+                                        "format": "int32",
+                                        "example": 654321
+                                    },
+                                    "token": {
+                                        "type": "string",
+                                        "example": "XYeLtR1Pji"
+                                    },
+                                    "password_confirmation": {
+                                        "type": "integer",
+                                        "format": "int32",
+                                        "example": 654321
+                                    }
+                                }
+                            }
+                        }
+                    },
+                    "required": false,
+                    "x-send-file-in-body": false
+                },
+                "responses": {
+                    "200": {
+                        "description": "",
+                        "content": {
+                            "application/json": {
+                                "schema": {}
+                            }
+                        },
+                        "headers": {}
+                    }
+                },
+                "deprecated": false
+            }
+        },
+        "/auth/verify": {
+            "post": {
+                "tags": [
+                    "Auth"
+                ],
+                "summary": "verify",
+                "operationId": "verify",
+                "parameters": [{
+                    "name": "Content-Type",
+                    "in": "header",
+                    "description": "",
+                    "required": true,
+                    "style": "simple",
+                    "schema": {
+                        "type": "string",
+                        "example": "application/x-www-form-urlencoded"
+                    }
+                }],
+                "requestBody": {
+                    "content": {
+                        "application/x-www-form-urlencoded": {
+                            "encoding": {},
+                            "schema": {
+                                "required": [
+                                    "code"
+                                ],
+                                "type": "object",
+                                "properties": {
+                                    "code": {
+                                        "type": "integer",
+                                        "format": "int32",
+                                        "example": 20935
+                                    }
+                                }
+                            }
+                        }
+                    },
+                    "required": false,
+                    "x-send-file-in-body": false
+                },
+                "responses": {
+                    "200": {
+                        "description": "",
+                        "content": {
+                            "application/json": {
+                                "schema": {}
+                            }
+                        },
+                        "headers": {}
+                    }
+                },
+                "deprecated": false
+            }
+        },
+        "/auth/resend-code": {
+            "post": {
+                "tags": [
+                    "Auth"
+                ],
+                "summary": "resend verification code",
+                "description": "resend verification code through SMS message",
+                "operationId": "ResendCode",
+                "parameters": [],
+                "requestBody": {
+                    "content": {
+                        "application/x-www-form-urlencoded": {
+                            "encoding": {},
+                            "schema": {
+                                "required": [],
+                                "type": "object",
+                                "properties": {
+                                    "user_name": {
+                                        "type": "string",
+                                        "example": "momen"
+                                    },
+                                    "email": {
+                                        "type": "string",
+                                        "example": "example@site.com"
+                                    },
+                                    "phone": {
+                                        "type": "string",
+                                        "example": "+996501234567"
+                                    }
+                                }
+                            }
+                        }
+                    },
+                    "required": true,
+                    "x-send-file-in-body": false
+                },
+                "responses": {
+                    "200": {
+                        "description": "",
+                        "content": {
+                            "application/json": {
+                                "schema": {}
+                            }
+                        },
+                        "headers": {}
+                    }
+                },
+                "deprecated": false
+            }
+        },
+        "/v1/auth/register": {
+            "post": {
+                "tags": [
+                    "Auth"
+                ],
+                "summary": "Register Manual",
+                "description": "Used to register a new manual account with regular email and password\r\n",
+                "operationId": "RegisterManualV1",
+                "parameters": [],
+                "requestBody": {
+                    "content": {
+                        "application/x-www-form-urlencoded": {
+                            "encoding": {},
+                            "schema": {
+                                "required": [
+                                    "email",
+                                    "user_name",
+                                    "phone",
+                                    "password",
+                                    "gender"
+                                ],
+                                "type": "object",
+                                "properties": {
+                                    "email": {
+                                        "type": "string",
+                                        "example": "almalkymomen@gmail.com"
+                                    },
+                                    "user_name": {
+                                        "type": "string",
+                                        "example": "momen"
+                                    },
+                                    "phone": {
+                                        "type": "string",
+                                        "example": "+201114413001"
+                                    },
+                                    "password": {
+                                        "type": "integer",
+                                        "format": "int32",
+                                        "example": 1234
+                                    },
+                                    "gender": {
+                                        "type": "integer",
+                                        "description": "0->male 1->female",
+                                        "format": "int32",
+                                        "example": 0
+                                    },
+                                    "mobile_uuid": {
+                                        "type": "string",
+                                        "example": "dsadaskf-dsadas-fdsadas-fdasf"
+                                    }
+                                }
+                            }
+                        }
+                    },
+                    "required": false,
+                    "x-send-file-in-body": false
+                },
+                "responses": {
+                    "200": {
+                        "description": "",
+                        "content": {
+                            "application/json": {
+                                "schema": {}
+                            }
+                        },
+                        "headers": {}
+                    }
+                },
+                "deprecated": false
+            }
+        },
+        "/v1/auth/social/register": {
+            "post": {
+                "tags": [
+                    "Auth"
+                ],
+                "summary": "Register Social",
+                "description": "Used to register with social media accounts in case that the social login api returned that the account is not registered\r\n",
+                "operationId": "RegisterSocialV1",
+                "parameters": [],
+                "requestBody": {
+                    "content": {
+                        "application/x-www-form-urlencoded": {
+                            "encoding": {},
+                            "schema": {
+                                "required": [
+                                    "name",
+                                    "phone",
+                                    "social_id",
+                                    "social_type",
+                                    "email",
+                                    "user_name",
+                                    "nationality",
+                                    "country_id",
+                                    "city_id",
+                                    "dob",
+                                    "gender"
+                                ],
+                                "type": "object",
+                                "properties": {
+                                    "name": {
+                                        "type": "string",
+                                        "example": "momen"
+                                    },
+                                    "phone": {
+                                        "type": "integer",
+                                        "format": "int32",
+                                        "example": 154277377
+                                    },
+                                    "user_name": {
+                                        "type": "string",
+                                        "example": "momen"
+                                    },
+                                    "social_id": {
+                                        "type": "integer",
+                                        "format": "int32",
+                                        "example": 123
+                                    },
+                                    "social_type": {
+                                        "type": "string",
+                                        "example": "google"
+                                    },
+                                    "email": {
+                                        "type": "string",
+                                        "example": "ah_sa_troy2009@yahoo.com"
+                                    },
+                                    "nationality": {
+                                        "type": "string",
+                                        "example": "Egyptian"
+                                    },
+                                    "country_id": {
+                                        "type": "integer",
+                                        "format": "int32",
+                                        "example": 64
+                                    },
+                                    "city_id": {
+                                        "type": "integer",
+                                        "format": "int32",
+                                        "example": 199
+                                    },
+                                    "dob": {
+                                        "type": "string",
+                                        "description": "YYYY-MM-dd",
+                                        "example": "1994-07-02"
+                                    },
+                                    "gender": {
+                                        "type": "integer",
+                                        "description": "0->male 1->female",
+                                        "format": "int32",
+                                        "example": 0
+                                    },
+                                    "mobile_uuid": {
+                                        "type": "string",
+                                        "example": "dsadaskf-dsadas-fdsadas-fdasf"
+                                    }
+                                }
+                            }
+                        }
+                    },
+                    "required": false,
+                    "x-send-file-in-body": false
+                },
+                "responses": {
+                    "200": {
+                        "description": "",
+                        "content": {
+                            "application/json": {
+                                "schema": {}
+                            }
+                        },
+                        "headers": {}
+                    }
+                },
+                "deprecated": false
+            }
+        },
+
+
+        "/cities": {
+            "get": {
+                "tags": [
+                    "Countries"
+                ],
+                "summary": "Get Cities",
+                "operationId": "GetCities",
+                "parameters": [],
+                "responses": {
+                    "200": {
+                        "description": "",
+                        "content": {
+                            "application/json": {
+                                "schema": {}
+                            }
+                        },
+                        "headers": {}
+                    }
+                },
+                "deprecated": false
+            }
+        },
+        "/country/cities": {
+            "post": {
+                "tags": [
+                    "Countries"
+                ],
+                "summary": "Get Cities By Country ID",
+                "operationId": "GetCitiesByCountryID",
+                "parameters": [],
+                "requestBody": {
+                    "content": {
+                        "application/x-www-form-urlencoded": {
+                            "encoding": {},
+                            "schema": {
+                                "required": [
+                                    "country_id"
+                                ],
+                                "type": "object",
+                                "properties": {
+                                    "country_id": {
+                                        "type": "integer",
+                                        "format": "int32",
+                                        "example": 64
+                                    }
+                                }
+                            }
+                        }
+                    },
+                    "required": false,
+                    "x-send-file-in-body": false
+                },
+                "responses": {
+                    "200": {
+                        "description": "",
+                        "content": {
+                            "application/json": {
+                                "schema": {}
+                            }
+                        },
+                        "headers": {}
+                    }
+                },
+                "security": [{
+                    "httpBearer": []
+                }],
+                "deprecated": false
+            }
+        },
+
+
+
+        "/store/gifts": {
+            "get": {
+                "tags": [
+                    "Gift"
+                ],
+                "summary": "Get Store Gifts",
+                "operationId": "GetStoreGifts",
+                "parameters": [],
+                "responses": {
+                    "200": {
+                        "description": "",
+                        "content": {
+                            "application/json": {
+                                "schema": {}
+                            }
+                        },
+                        "headers": {}
+                    }
+                },
+                "security": [{
+                    "httpBearer": []
+                }],
+                "deprecated": false
+            }
+        },
+        "/store/gifts/get": {
+            "get": {
+                "tags": [
+                    "Gift"
+                ],
+                "summary": "Get My Gifts",
+                "operationId": "GetMyGifts",
+                "parameters": [],
+                "responses": {
+                    "200": {
+                        "description": "",
+                        "content": {
+                            "application/json": {
+                                "schema": {}
+                            }
+                        },
+                        "headers": {}
+                    }
+                },
+                "security": [{
+                    "httpBearer": []
+                }],
+                "deprecated": false
+            }
+        },
+
+        "/store/gifts/send": {
+            "post": {
+                "tags": [
+                    "Store"
+                ],
+                "summary": "Send Gift",
+                "operationId": "SendGift",
+                "parameters": [],
+                "requestBody": {
+                    "content": {
+                        "application/x-www-form-urlencoded": {
+                            "encoding": {},
+                            "schema": {
+                                "required": [
+                                    "room_id",
+                                    "gift_id",
+                                    "to_user_id"
+                                ],
+                                "type": "object",
+                                "properties": {
+                                    "room_id": {
+                                        "type": "integer",
+                                        "format": "int32",
+                                        "example": 3
+                                    },
+                                    "gift_id": {
+                                        "type": "integer",
+                                        "format": "int32",
+                                        "example": 3
+                                    },
+                                    "to_user_id": {
+                                        "type": "integer",
+                                        "format": "int32",
+                                        "example": 3
+                                    }
+                                }
+                            }
+                        }
+                    },
+                    "required": false,
+                    "x-send-file-in-body": false
+                },
+                "responses": {
+                    "200": {
+                        "description": "",
+                        "content": {
+                            "application/json": {
+                                "schema": {}
+                            }
+                        },
+                        "headers": {}
+                    }
+                },
+                "security": [{
+                    "httpBearer": []
+                }],
+                "deprecated": false
+            }
+        },
+        "/store/gifts/buy-and-send": {
+            "post": {
+                "tags": [
+                    "Store"
+                ],
+                "summary": "buy gift and send it",
+                "parameters": [],
+                "requestBody": {
+                    "content": {
+                        "application/x-www-form-urlencoded": {
+                            "encoding": {},
+                            "schema": {
+                                "required": [
+                                    "room_id",
+                                    "gift_id",
+                                    "to_user_id"
+                                ],
+                                "type": "object",
+                                "properties": {
+                                    "room_id": {
+                                        "type": "integer",
+                                        "format": "int32",
+                                        "example": 3
+                                    },
+                                    "gift_id": {
+                                        "type": "integer",
+                                        "format": "int32",
+                                        "example": 3
+                                    },
+                                    "to_user_id": {
+                                        "type": "integer",
+                                        "format": "int32",
+                                        "example": 3
+                                    }
+                                }
+                            }
+                        }
+                    },
+                    "required": false,
+                    "x-send-file-in-body": false
+                },
+                "responses": {
+                    "200": {
+                        "description": "",
+                        "content": {
+                            "application/json": {
+                                "schema": {}
+                            }
+                        },
+                        "headers": {}
+                    }
+                },
+                "security": [{
+                    "httpBearer": []
+                }],
+                "deprecated": false
+            }
+        },
+        "/store/gems/convert": {
+            "post": {
+                "tags": [
+                    "Store"
+                ],
+                "summary": "convert Gems To Diamonds",
+                "operationId": "convertGemsToDiamonds",
+                "parameters": [],
+                "requestBody": {
+                    "content": {
+                        "application/x-www-form-urlencoded": {
+                            "encoding": {},
+                            "schema": {
+                                "required": [
+                                    "gems"
+                                ],
+                                "type": "object",
+                                "properties": {
+                                    "gems": {
+                                        "type": "integer",
+                                        "format": "int32",
+                                        "example": 100
+                                    }
+                                }
+                            }
+                        }
+                    }
+                },
+                "responses": {
+                    "200": {
+                        "description": "",
+                        "content": {
+                            "application/json": {
+                                "schema": {}
+                            }
+                        },
+                        "headers": {}
+                    }
+                },
+                "security": [{
+                    "httpBearer": []
+                }],
+                "deprecated": false
+            }
+        },
+        "/store/badges": {
+            "get": {
+                "tags": [
+                    "Store"
+                ],
+                "summary": "Get Store Badges",
+                "operationId": "GetStoreBadgess",
+                "parameters": [],
+                "responses": {
+                    "200": {
+                        "description": "",
+                        "content": {
+                            "application/json": {
+                                "schema": {}
+                            }
+                        },
+                        "headers": {}
+                    }
+                },
+                "security": [{
+                    "httpBearer": []
+                }],
+                "deprecated": false
+            }
+        },
+        "/store/badges/get": {
+            "get": {
+                "tags": [
+                    "Store"
+                ],
+                "summary": "Get My badges",
+                "operationId": "GetMyBadges",
+                "parameters": [],
+                "responses": {
+                    "200": {
+                        "description": "",
+                        "content": {
+                            "application/json": {
+                                "schema": {}
+                            }
+                        },
+                        "headers": {}
+                    }
+                },
+                "security": [{
+                    "httpBearer": []
+                }],
+                "deprecated": false
+            }
+        },
+        "/store/badges/create": {
+            "post": {
+                "tags": [
+                    "Store"
+                ],
+                "summary": "Buy Badge",
+                "operationId": "BuyBadge",
+                "parameters": [],
+                "requestBody": {
+                    "content": {
+                        "application/x-www-form-urlencoded": {
+                            "encoding": {},
+                            "schema": {
+                                "required": [
+                                    "badge_id"
+                                ],
+                                "type": "object",
+                                "properties": {
+                                    "badge_id": {
+                                        "type": "integer",
+                                        "format": "int32",
+                                        "example": 3
+                                    }
+                                }
+                            }
+                        }
+                    },
+                    "required": false,
+                    "x-send-file-in-body": false
+                },
+                "responses": {
+                    "200": {
+                        "description": "",
+                        "content": {
+                            "application/json": {
+                                "schema": {}
+                            }
+                        },
+                        "headers": {}
+                    }
+                },
+                "security": [{
+                    "httpBearer": []
+                }],
+                "deprecated": false
+            }
+        },
+        "/store/frames": {
+            "get": {
+                "tags": [
+                    "Store"
+                ],
+                "summary": "Get Store Frames",
+                "operationId": "GetStoreFrames",
+                "parameters": [],
+                "responses": {
+                    "200": {
+                        "description": "",
+                        "content": {
+                            "application/json": {
+                                "schema": {}
+                            }
+                        },
+                        "headers": {}
+                    }
+                },
+                "security": [{
+                    "httpBearer": []
+                }],
+                "deprecated": false
+            }
+        },
+        "/store/frames/get": {
+            "get": {
+                "tags": [
+                    "Store"
+                ],
+                "summary": "Get My Frames",
+                "operationId": "GetMyFrames",
+                "parameters": [],
+                "responses": {
+                    "200": {
+                        "description": "",
+                        "content": {
+                            "application/json": {
+                                "schema": {}
+                            }
+                        },
+                        "headers": {}
+                    }
+                },
+                "security": [{
+                    "httpBearer": []
+                }],
+                "deprecated": false
+            }
+        },
+        "/store/frames/create": {
+            "post": {
+                "tags": [
+                    "Store"
+                ],
+                "summary": "Buy Frame",
+                "operationId": "BuyFrame",
+                "parameters": [],
+                "requestBody": {
+                    "content": {
+                        "application/x-www-form-urlencoded": {
+                            "encoding": {},
+                            "schema": {
+                                "required": [
+                                    "frame_id"
+                                ],
+                                "type": "object",
+                                "properties": {
+                                    "frame_id": {
+                                        "type": "integer",
+                                        "format": "int32",
+                                        "example": 3
+                                    }
+                                }
+                            }
+                        }
+                    },
+                    "required": false,
+                    "x-send-file-in-body": false
+                },
+                "responses": {
+                    "200": {
+                        "description": "",
+                        "content": {
+                            "application/json": {
+                                "schema": {}
+                            }
+                        },
+                        "headers": {}
+                    }
+                },
+                "security": [{
+                    "httpBearer": []
+                }],
+                "deprecated": false
+            }
+        },
+        "/store/frames/set": {
+            "post": {
+                "tags": [
+                    "Store"
+                ],
+                "summary": "set active frame",
+                "operationId": "SetFrame",
+                "description": "set active frame for the logged in user, (if frame_id is 0 it will unset the active frame)",
+                "parameters": [],
+                "requestBody": {
+                    "content": {
+                        "application/x-www-form-urlencoded": {
+                            "encoding": {},
+                            "schema": {
+                                "required": [
+                                    "frame_id"
+                                ],
+                                "type": "object",
+                                "properties": {
+                                    "frame_id": {
+                                        "type": "integer",
+                                        "format": "int32",
+                                        "example": 3
+                                    }
+                                }
+                            }
+                        }
+                    },
+                    "required": false,
+                    "x-send-file-in-body": false
+                },
+                "responses": {
+                    "200": {
+                        "description": "",
+                        "content": {
+                            "application/json": {
+                                "schema": {}
+                            }
+                        },
+                        "headers": {}
+                    }
+                },
+                "security": [{
+                    "httpBearer": []
+                }],
+                "deprecated": false
+            }
+        },
+        "/store/loginsigns": {
+            "get": {
+                "tags": [
+                    "Store"
+                ],
+                "summary": "Get Store login Signs",
+                "operationId": "GetStoreloginsigns",
+                "parameters": [],
+                "responses": {
+                    "200": {
+                        "description": "",
+                        "content": {
+                            "application/json": {
+                                "schema": {}
+                            }
+                        },
+                        "headers": {}
+                    }
+                },
+                "security": [{
+                    "httpBearer": []
+                }],
+                "deprecated": false
+            }
+        },
+        "/store/loginsigns/get": {
+            "get": {
+                "tags": [
+                    "Store"
+                ],
+                "summary": "Get My login Signs",
+                "operationId": "GetMyloginsigns",
+                "parameters": [],
+                "responses": {
+                    "200": {
+                        "description": "",
+                        "content": {
+                            "application/json": {
+                                "schema": {}
+                            }
+                        },
+                        "headers": {}
+                    }
+                },
+                "security": [{
+                    "httpBearer": []
+                }],
+                "deprecated": false
+            }
+        },
+        "/store/loginsigns/create": {
+            "post": {
+                "tags": [
+                    "Store"
+                ],
+                "summary": "Buy Store",
+                "operationId": "BuyStore",
+                "parameters": [],
+                "requestBody": {
+                    "content": {
+                        "application/x-www-form-urlencoded": {
+                            "encoding": {},
+                            "schema": {
+                                "required": [
+                                    "loginsign_id"
+                                ],
+                                "type": "object",
+                                "properties": {
+                                    "loginsign_id": {
+                                        "type": "integer",
+                                        "format": "int32",
+                                        "example": 3
+                                    }
+                                }
+                            }
+                        }
+                    },
+                    "required": false,
+                    "x-send-file-in-body": false
+                },
+                "responses": {
+                    "200": {
+                        "description": "",
+                        "content": {
+                            "application/json": {
+                                "schema": {}
+                            }
+                        },
+                        "headers": {}
+                    }
+                },
+                "security": [{
+                    "httpBearer": []
+                }],
+                "deprecated": false
+            }
+        },
+        "/store/loginsigns/set": {
+            "post": {
+                "tags": [
+                    "Store"
+                ],
+                "summary": "set active login sign",
+                "operationId": "SetLoginSign",
+                "description": "set active login sign for the logged in user, (if loginsign_id is 0 it will unset the active login sign)",
+                "parameters": [],
+                "requestBody": {
+                    "content": {
+                        "application/x-www-form-urlencoded": {
+                            "encoding": {},
+                            "schema": {
+                                "required": [
+                                    "loginsign_id"
+                                ],
+                                "type": "object",
+                                "properties": {
+                                    "loginsign_id": {
+                                        "type": "integer",
+                                        "format": "int32",
+                                        "example": 3
+                                    }
+                                }
+                            }
+                        }
+                    },
+                    "required": false,
+                    "x-send-file-in-body": false
+                },
+                "responses": {
+                    "200": {
+                        "description": "",
+                        "content": {
+                            "application/json": {
+                                "schema": {}
+                            }
+                        },
+                        "headers": {}
+                    }
+                },
+                "security": [{
+                    "httpBearer": []
+                }],
+                "deprecated": false
+            }
+        },
+
+
+        "/store/emojis": {
+            "get": {
+                "tags": [
+                    "Emoji"
+                ],
+                "summary": "Get Emojis",
+                "operationId": "GetEmojis",
+                "parameters": [],
+                "responses": {
+                    "200": {
+                        "description": "",
+                        "content": {
+                            "application/json": {
+                                "schema": {}
+                            }
+                        },
+                        "headers": {}
+                    }
+                },
+                "security": [{
+                    "httpBearer": []
+                }],
+                "deprecated": false
+            }
+        },
+        "/store/emojis/send": {
+            "post": {
+                "tags": [
+                    "Emoji"
+                ],
+                "summary": "Send Emoji",
+                "operationId": "SendEmoji",
+                "parameters": [],
+                "requestBody": {
+                    "content": {
+                        "application/x-www-form-urlencoded": {
+                            "encoding": {},
+                            "schema": {
+                                "required": [
+                                    "emoji_id",
+                                    "room_id"
+                                ],
+                                "type": "object",
+                                "properties": {
+                                    "emoji_id": {
+                                        "type": "integer",
+                                        "format": "int32",
+                                        "example": 3
+                                    },
+                                    "room_id": {
+                                        "type": "integer",
+                                        "format": "int32",
+                                        "example": 3
+                                    }
+                                }
+                            }
+                        }
+                    },
+                    "required": false,
+                    "x-send-file-in-body": false
+                },
+                "responses": {
+                    "200": {
+                        "description": "",
+                        "content": {
+                            "application/json": {
+                                "schema": {}
+                            }
+                        },
+                        "headers": {}
+                    }
+                },
+                "security": [{
+                    "httpBearer": []
+                }],
+                "deprecated": false
+            }
+        },
+
+
+
+
+
+
+
+
+
+
+
+
+        "/v1/diamonds-price": {
+            "get": {
+                "tags": [
+                    "Store"
+                ],
+                "summary": "Get relative values of currency units",
+                "operationId": "GetPrices",
+                "parameters": [],
+                "responses": {
+                    "200": {
+                        "description": "",
+                        "content": {
+                            "application/json": {
+                                "schema": {}
+                            }
+                        },
+                        "headers": {}
+                    }
+                },
+                "security": [{
+                    "httpBearer": []
+                }],
+                "deprecated": false
+            }
+        },
+        "/v1/buy-diamonds": {
+            "post": {
+                "tags": [
+                    "Store"
+                ],
+                "summary": "Buy diamonds",
+                "operationId": "Buydiamonds",
+                "parameters": [],
+                "requestBody": {
+                    "content": {
+                        "application/x-www-form-urlencoded": {
+                            "encoding": {},
+                            "schema": {
+                                "required": [
+                                    "price"
+                                ],
+                                "type": "object",
+                                "properties": {
+                                    "price": {
+                                        "type": "number",
+                                        "format": "float",
+                                        "example": 2.99
+                                    }
+                                }
+                            }
+                        }
+                    },
+                    "required": false,
+                    "x-send-file-in-body": false
+                },
+                "responses": {
+                    "200": {
+                        "description": "",
+                        "content": {
+                            "application/json": {
+                                "schema": {}
+                            }
+                        },
+                        "headers": {}
+                    }
+                },
+                "security": [{
+                    "httpBearer": []
+                }],
+                "deprecated": false
+            }
+        },
+        "/profile/details": {
+            "post": {
+                "tags": [
+                    "Profile"
+                ],
+                "summary": "Profile Details",
+                "operationId": "ProfileDetails",
+                "parameters": [],
+                "requestBody": {
+                    "content": {
+                        "application/x-www-form-urlencoded": {
+                            "encoding": {},
+                            "schema": {
+                                "type": "object",
+                                "properties": {
+                                    "id": {
+                                        "type": "integer",
+                                        "description": "optional",
+                                        "format": "int32",
+                                        "example": 19
+                                    }
+                                }
+                            }
+                        }
+                    },
+                    "required": false,
+                    "x-send-file-in-body": false
+                },
+                "responses": {
+                    "200": {
+                        "description": "",
+                        "content": {
+                            "application/json": {
+                                "schema": {}
+                            }
+                        },
+                        "headers": {}
+                    }
+                },
+                "security": [{
+                    "httpBearer": []
+                }],
+                "deprecated": false
+            }
+        },
+        "/profile/support": {
+            "post": {
+                "tags": [
+                    "Profile"
+                ],
+                "summary": "Send Message To Support(Admin)",
+                "operationId": "SendMessageToSupport(Admin)",
+                "parameters": [],
+                "requestBody": {
+                    "content": {
+                        "application/x-www-form-urlencoded": {
+                            "encoding": {},
+                            "schema": {
+                                "required": [
+                                    "message"
+                                ],
+                                "type": "object",
+                                "properties": {
+                                    "message": {
+                                        "type": "string",
+                                        "example": "HEllo There I have problem in 123"
+                                    }
+                                }
+                            }
+                        }
+                    },
+                    "required": false,
+                    "x-send-file-in-body": false
+                },
+                "responses": {
+                    "200": {
+                        "description": "",
+                        "content": {
+                            "application/json": {
+                                "schema": {}
+                            }
+                        },
+                        "headers": {}
+                    }
+                },
+                "security": [{
+                    "httpBearer": []
+                }],
+                "deprecated": false
+            }
+        },
+        "/profile/user": {
+            "post": {
+                "tags": [
+                    "Profile"
+                ],
+                "summary": "Show Another User Profile",
+                "operationId": "ShowAnotherUserProfile",
+                "parameters": [],
+                "requestBody": {
+                    "content": {
+                        "application/x-www-form-urlencoded": {
+                            "encoding": {},
+                            "schema": {
+                                "required": [
+                                    "user_id"
+                                ],
+                                "type": "object",
+                                "properties": {
+                                    "user_id": {
+                                        "type": "integer",
+                                        "format": "int32",
+                                        "example": 19
+                                    }
+                                }
+                            }
+                        }
+                    },
+                    "required": false,
+                    "x-send-file-in-body": false
+                },
+                "responses": {
+                    "200": {
+                        "description": "",
+                        "content": {
+                            "application/json": {
+                                "schema": {}
+                            }
+                        },
+                        "headers": {}
+                    }
+                },
+                "security": [{
+                    "httpBearer": []
+                }],
+                "deprecated": false
+            }
+        },
+        "/profile/update": {
+            "post": {
+                "tags": [
+                    "Profile"
+                ],
+                "summary": "Update Profile",
+                "operationId": "UpdateProfile",
+                "parameters": [],
+                "requestBody": {
+                    "content": {
+                        "application/x-www-form-urlencoded": {
+                            "encoding": {},
+                            "schema": {
+                                "type": "object",
+                                "properties": {
+                                    "email": {
+                                        "type": "string",
+                                        "example": "almalky@site.com"
+                                    },
+                                    "phone": {
+                                        "type": "integer",
+                                        "format": "int32",
+                                        "example": 365
+                                    },
+                                    "user_name": {
+                                        "type": "string",
+                                        "example": "facebook_user"
+                                    },
+                                    "name": {
+                                        "type": "string",
+                                        "example": "momen"
+                                    },
+                                    "password": {
+                                        "type": "integer",
+                                        "format": "int32",
+                                        "example": 123456
+                                    },
+                                    "age": {
+                                        "type": "integer",
+                                        "description": "YYYY-MM-DD",
+                                        "format": "int32",
+                                        "example": 18
+                                    },
+                                    "profile_pic": {
+                                        "type": "string"
+                                    },
+                                    "gender": {
+                                        "type": "integer",
+                                        "description": "0 -> male\n1 -> female",
+                                        "format": "int32",
+                                        "example": 0
+                                    },
+                                    "description": {
+                                        "type": "string",
+                                        "example": "wooow user"
+                                    },
+                                    "job": {
+                                        "type": "string",
+                                        "example": "wooow lala land"
+                                    }
+                                }
+                            }
+                        }
+                    },
+                    "required": false,
+                    "x-send-file-in-body": false
+                },
+                "responses": {
+                    "200": {
+                        "description": "",
+                        "content": {
+                            "application/json": {
+                                "schema": {}
+                            }
+                        },
+                        "headers": {}
+                    }
+                },
+                "security": [{
+                    "httpBearer": []
+                }],
+                "deprecated": false
+            }
+        },
+        "/users/follow": {
+            "post": {
+                "tags": [
+                    "Followers"
+                ],
+                "summary": "Follow User",
+                "operationId": "FollowUser",
+                "parameters": [],
+                "requestBody": {
+                    "content": {
+                        "application/x-www-form-urlencoded": {
+                            "encoding": {},
+                            "schema": {
+                                "required": [
+                                    "follower_id"
+                                ],
+                                "type": "object",
+                                "properties": {
+                                    "follower_id": {
+                                        "type": "integer",
+                                        "format": "int32",
+                                        "example": 19
+                                    }
+                                }
+                            }
+                        }
+                    },
+                    "required": false,
+                    "x-send-file-in-body": false
+                },
+                "responses": {
+                    "200": {
+                        "description": "",
+                        "content": {
+                            "application/json": {
+                                "schema": {}
+                            }
+                        },
+                        "headers": {}
+                    }
+                },
+                "security": [{
+                    "httpBearer": []
+                }],
+                "deprecated": false
+            }
+        },
+        "/users/unfollow": {
+            "post": {
+                "tags": [
+                    "Followers"
+                ],
+                "summary": "Un Follow User",
+                "operationId": "UnFollowUser",
+                "parameters": [],
+                "requestBody": {
+                    "content": {
+                        "application/x-www-form-urlencoded": {
+                            "encoding": {},
+                            "schema": {
+                                "required": [
+                                    "follower_id"
+                                ],
+                                "type": "object",
+                                "properties": {
+                                    "follower_id": {
+                                        "type": "integer",
+                                        "format": "int32",
+                                        "example": 18
+                                    }
+                                }
+                            }
+                        }
+                    },
+                    "required": false,
+                    "x-send-file-in-body": false
+                },
+                "responses": {
+                    "200": {
+                        "description": "",
+                        "content": {
+                            "application/json": {
+                                "schema": {}
+                            }
+                        },
+                        "headers": {}
+                    }
+                },
+                "security": [{
+                    "httpBearer": []
+                }],
+                "deprecated": false
+            }
+        },
+        "/users/following": {
+            "get": {
+                "tags": [
+                    "Followers"
+                ],
+                "summary": "Get Whom I Follow",
+                "operationId": "GetWhomIFollow",
+                "parameters": [],
+                "responses": {
+                    "200": {
+                        "description": "",
+                        "content": {
+                            "application/json": {
+                                "schema": {}
+                            }
+                        },
+                        "headers": {}
+                    }
+                },
+                "security": [{
+                    "httpBearer": []
+                }],
+                "deprecated": false
+            }
+        },
+        "/users/followers": {
+            "get": {
+                "tags": [
+                    "Followers"
+                ],
+                "summary": "Get My Followers",
+                "operationId": "GetMyFollowers",
+                "parameters": [{
+                    "name": "user_id",
+                    "in": "query",
+                    "description": "optional",
+                    "required": false,
+                    "style": "form",
+                    "explode": true,
+                    "schema": {
+                        "type": "integer",
+                        "format": "int32",
+                        "example": 19
+                    }
+                }],
+                "responses": {
+                    "200": {
+                        "description": "",
+                        "content": {
+                            "application/json": {
+                                "schema": {}
+                            }
+                        },
+                        "headers": {}
+                    }
+                },
+                "security": [{
+                    "httpBearer": []
+                }],
+                "deprecated": false
+            }
+        },
+        "/users/addFavorite": {
+            "post": {
+                "tags": [
+                    "Favorites"
+                ],
+                "summary": "Add a user to my favorites",
+                "operationId": "AddToFavorites",
+                "parameters": [],
+                "requestBody": {
+                    "content": {
+                        "application/x-www-form-urlencoded": {
+                            "encoding": {},
+                            "schema": {
+                                "required": [
+                                    "favorite_id"
+                                ],
+                                "type": "object",
+                                "properties": {
+                                    "favorite_id": {
+                                        "type": "integer",
+                                        "format": "int32",
+                                        "example": 19
+                                    }
+                                }
+                            }
+                        }
+                    },
+                    "required": false,
+                    "x-send-file-in-body": false
+                },
+                "responses": {
+                    "200": {
+                        "description": "",
+                        "content": {
+                            "application/json": {
+                                "schema": {}
+                            }
+                        },
+                        "headers": {}
+                    }
+                },
+                "security": [{
+                    "httpBearer": []
+                }],
+                "deprecated": false
+            }
+        },
+        "/users/removeFavorite": {
+            "post": {
+                "tags": [
+                    "Favorites"
+                ],
+                "summary": "remove a user from my favorites",
+                "operationId": "RemoveFromFavorites",
+                "parameters": [],
+                "requestBody": {
+                    "content": {
+                        "application/x-www-form-urlencoded": {
+                            "encoding": {},
+                            "schema": {
+                                "required": [
+                                    "favorite_id"
+                                ],
+                                "type": "object",
+                                "properties": {
+                                    "favorite_id": {
+                                        "type": "integer",
+                                        "format": "int32",
+                                        "example": 18
+                                    }
+                                }
+                            }
+                        }
+                    },
+                    "required": false,
+                    "x-send-file-in-body": false
+                },
+                "responses": {
+                    "200": {
+                        "description": "",
+                        "content": {
+                            "application/json": {
+                                "schema": {}
+                            }
+                        },
+                        "headers": {}
+                    }
+                },
+                "security": [{
+                    "httpBearer": []
+                }],
+                "deprecated": false
+            }
+        },
+        "/users/Favorites": {
+            "get": {
+                "tags": [
+                    "Favorites"
+                ],
+                "summary": "Get a list of my favorite users",
+                "operationId": "GetFavorites",
+                "parameters": [{
+                    "name": "user_id",
+                    "in": "query",
+                    "description": "optional",
+                    "required": false,
+                    "style": "form",
+                    "explode": true,
+                    "schema": {
+                        "type": "integer",
+                        "format": "int32",
+                        "example": 19
+                    }
+                }],
+                "responses": {
+                    "200": {
+                        "description": "",
+                        "content": {
+                            "application/json": {
+                                "schema": {}
+                            }
+                        },
+                        "headers": {}
+                    }
+                },
+                "security": [{
+                    "httpBearer": []
+                }],
+                "deprecated": false
+            }
+        },
+        "/users/FavoriteTo": {
+            "get": {
+                "tags": [
+                    "Favorites"
+                ],
+                "summary": "Get a list of users who have me in their favorites",
+                "operationId": "GetFavoriteTo",
+                "parameters": [{
+                    "name": "user_id",
+                    "in": "query",
+                    "description": "optional",
+                    "required": false,
+                    "style": "form",
+                    "explode": true,
+                    "schema": {
+                        "type": "integer",
+                        "format": "int32",
+                        "example": 19
+                    }
+                }],
+                "responses": {
+                    "200": {
+                        "description": "",
+                        "content": {
+                            "application/json": {
+                                "schema": {}
+                            }
+                        },
+                        "headers": {}
+                    }
+                },
+                "security": [{
+                    "httpBearer": []
+                }],
+                "deprecated": false
+            }
+        },
+        "/users/friends/request/send": {
+            "post": {
+                "tags": [
+                    "Friendship"
+                ],
+                "summary": "Send Friend Request",
+                "operationId": "SendFriendRequest",
+                "parameters": [],
+                "requestBody": {
+                    "content": {
+                        "application/x-www-form-urlencoded": {
+                            "encoding": {},
+                            "schema": {
+                                "required": [
+                                    "friend_id"
+                                ],
+                                "type": "object",
+                                "properties": {
+                                    "friend_id": {
+                                        "type": "integer",
+                                        "format": "int32",
+                                        "example": 19
+                                    }
+                                }
+                            }
+                        }
+                    },
+                    "required": false,
+                    "x-send-file-in-body": false
+                },
+                "responses": {
+                    "200": {
+                        "description": "",
+                        "content": {
+                            "application/json": {
+                                "schema": {}
+                            }
+                        },
+                        "headers": {}
+                    }
+                },
+                "security": [{
+                    "httpBearer": []
+                }],
+                "deprecated": false
+            }
+        },
+        "/users/friends/block": {
+            "post": {
+                "tags": [
+                    "Friendship"
+                ],
+                "summary": "Block User",
+                "operationId": "BlockUser",
+                "parameters": [],
+                "requestBody": {
+                    "content": {
+                        "application/x-www-form-urlencoded": {
+                            "encoding": {},
+                            "schema": {
+                                "required": [
+                                    "friend_id"
+                                ],
+                                "type": "object",
+                                "properties": {
+                                    "friend_id": {
+                                        "type": "integer",
+                                        "format": "int32",
+                                        "example": 19
+                                    }
+                                }
+                            }
+                        }
+                    },
+                    "required": false,
+                    "x-send-file-in-body": false
+                },
+                "responses": {
+                    "200": {
+                        "description": "",
+                        "content": {
+                            "application/json": {
+                                "schema": {}
+                            }
+                        },
+                        "headers": {}
+                    }
+                },
+                "security": [{
+                    "httpBearer": []
+                }],
+                "deprecated": false
+            }
+        },
+        "/users/friends/unblock": {
+            "post": {
+                "tags": [
+                    "Friendship"
+                ],
+                "summary": "Un Block User",
+                "operationId": "UnBlockUser",
+                "parameters": [],
+                "requestBody": {
+                    "content": {
+                        "application/x-www-form-urlencoded": {
+                            "encoding": {},
+                            "schema": {
+                                "required": [
+                                    "blocked_id"
+                                ],
+                                "type": "object",
+                                "properties": {
+                                    "blocked_id": {
+                                        "type": "integer",
+                                        "format": "int32",
+                                        "example": 18
+                                    }
+                                }
+                            }
+                        }
+                    },
+                    "required": false,
+                    "x-send-file-in-body": false
+                },
+                "responses": {
+                    "200": {
+                        "description": "",
+                        "content": {
+                            "application/json": {
+                                "schema": {}
+                            }
+                        },
+                        "headers": {}
+                    }
+                },
+                "security": [{
+                    "httpBearer": []
+                }],
+                "deprecated": false
+            }
+        },
+        "/users/friends/unfriend": {
+            "post": {
+                "tags": [
+                    "Friendship"
+                ],
+                "summary": "Un Friend User",
+                "operationId": "UnFriendUser",
+                "parameters": [],
+                "requestBody": {
+                    "content": {
+                        "application/x-www-form-urlencoded": {
+                            "encoding": {},
+                            "schema": {
+                                "required": [
+                                    "friend_id"
+                                ],
+                                "type": "object",
+                                "properties": {
+                                    "friend_id": {
+                                        "type": "integer",
+                                        "format": "int32",
+                                        "example": 19
+                                    }
+                                }
+                            }
+                        }
+                    },
+                    "required": false,
+                    "x-send-file-in-body": false
+                },
+                "responses": {
+                    "200": {
+                        "description": "",
+                        "content": {
+                            "application/json": {
+                                "schema": {}
+                            }
+                        },
+                        "headers": {}
+                    }
+                },
+                "security": [{
+                    "httpBearer": []
+                }],
+                "deprecated": false
+            }
+        },
+        "/users/friends/request/accept": {
+            "post": {
+                "tags": [
+                    "Friendship"
+                ],
+                "summary": "Accept Friend Request",
+                "operationId": "AcceptFriendRequest",
+                "parameters": [],
+                "requestBody": {
+                    "content": {
+                        "application/x-www-form-urlencoded": {
+                            "encoding": {},
+                            "schema": {
+                                "required": [
+                                    "requester_id"
+                                ],
+                                "type": "object",
+                                "properties": {
+                                    "requester_id": {
+                                        "type": "integer",
+                                        "format": "int32",
+                                        "example": 18
+                                    }
+                                }
+                            }
+                        }
+                    },
+                    "required": false,
+                    "x-send-file-in-body": false
+                },
+                "responses": {
+                    "200": {
+                        "description": "",
+                        "content": {
+                            "application/json": {
+                                "schema": {}
+                            }
+                        },
+                        "headers": {}
+                    }
+                },
+                "security": [{
+                    "httpBearer": []
+                }],
+                "deprecated": false
+            }
+        },
+        "/users/friends/request/cancel": {
+            "post": {
+                "tags": [
+                    "Friendship"
+                ],
+                "summary": "Cancel Friend Request",
+                "operationId": "CancelFriendRequest",
+                "parameters": [],
+                "requestBody": {
+                    "content": {
+                        "application/x-www-form-urlencoded": {
+                            "encoding": {},
+                            "schema": {
+                                "required": [
+                                    "requester_id"
+                                ],
+                                "type": "object",
+                                "properties": {
+                                    "requester_id": {
+                                        "type": "integer",
+                                        "format": "int32",
+                                        "example": 18
+                                    }
+                                }
+                            }
+                        }
+                    },
+                    "required": false,
+                    "x-send-file-in-body": false
+                },
+                "responses": {
+                    "200": {
+                        "description": "",
+                        "content": {
+                            "application/json": {
+                                "schema": {}
+                            }
+                        },
+                        "headers": {}
+                    }
+                },
+                "security": [{
+                    "httpBearer": []
+                }],
+                "deprecated": false
+            }
+        },
+        "/users/friends": {
+            "get": {
+                "tags": [
+                    "Friendship"
+                ],
+                "summary": "Get My Friends",
+                "operationId": "GetMyFriends",
+                "parameters": [{
+                    "name": "user_id",
+                    "in": "query",
+                    "description": "optional",
+                    "required": false,
+                    "style": "form",
+                    "explode": true,
+                    "schema": {
+                        "type": "integer",
+                        "format": "int32",
+                        "example": 19
+                    }
+                }],
+                "responses": {
+                    "200": {
+                        "description": "",
+                        "content": {
+                            "application/json": {
+                                "schema": {}
+                            }
+                        },
+                        "headers": {}
+                    }
+                },
+                "security": [{
+                    "httpBearer": []
+                }],
+                "deprecated": false
+            }
+        },
+        "/users/friends/requests": {
+            "get": {
+                "tags": [
+                    "Friendship"
+                ],
+                "summary": "Get My Friend Requests",
+                "operationId": "GetMyFriendRequests",
+                "parameters": [{
+                    "name": "user_id",
+                    "in": "query",
+                    "description": "optional",
+                    "required": false,
+                    "style": "form",
+                    "explode": true,
+                    "schema": {
+                        "type": "integer",
+                        "format": "int32",
+                        "example": 19
+                    }
+                }],
+                "responses": {
+                    "200": {
+                        "description": "",
+                        "content": {
+                            "application/json": {
+                                "schema": {}
+                            }
+                        },
+                        "headers": {}
+                    }
+                },
+                "security": [{
+                    "httpBearer": []
+                }],
+                "deprecated": false
+            }
+        },
+        "/users/friends/blocking/list": {
+            "get": {
+                "tags": [
+                    "Friendship"
+                ],
+                "summary": "Get My Blocking List",
+                "operationId": "GetMyBlockingList",
+                "parameters": [],
+                "responses": {
+                    "200": {
+                        "description": "",
+                        "content": {
+                            "application/json": {
+                                "schema": {}
+                            }
+                        },
+                        "headers": {}
+                    }
+                },
+                "security": [{
+                    "httpBearer": []
+                }],
+                "deprecated": false
+            }
+        },
+
+
+        "/users/search": {
+            "post": {
+                "tags": [
+                    "Users"
+                ],
+                "summary": "Search Users Except Me & Blockings",
+                "operationId": "SearchUsersExceptMe&Blockings",
+                "parameters": [],
+                "requestBody": {
+                    "content": {
+                        "application/x-www-form-urlencoded": {
+                            "encoding": {},
+                            "schema": {
+                                "required": [
+                                    "name"
+                                ],
+                                "type": "object",
+                                "properties": {
+                                    "name": {
+                                        "type": "string",
+                                        "example": "Maya"
+                                    },
+                                    "user_name": {
+                                        "type": "string",
+                                        "example": "facebook_user"
+                                    }
+                                }
+                            }
+                        }
+                    },
+                    "required": false,
+                    "x-send-file-in-body": false
+                },
+                "responses": {
+                    "200": {
+                        "description": "",
+                        "content": {
+                            "application/json": {
+                                "schema": {}
+                            }
+                        },
+                        "headers": {}
+                    }
+                },
+                "security": [{
+                    "httpBearer": []
+                }],
+                "deprecated": false
+            }
+        },
+        "/users/streamer/report": {
+            "get": {
+                "tags": [
+                    "Streamer"
+                ],
+                "summary": "get streamers progress for agent",
+                "parameters": [
+                    {
+                        "name": "month",
+                        "in": "query",
+                        "required": false,
+                        "type": "string",
+                        "format": "int32",
+                        "example": "2202-09"
+                    }
+                ],
+                "responses": {
+                    "200": {
+                        "description": "",
+                        "content": {
+                            "application/json": {
+                                "schema": {}
+                            }
+                        },
+                        "headers": {}
+                    }
+                },
+                "security": [{
+                    "httpBearer": []
+                }],
+                "deprecated": false
+            }
+        },
+        "/users/streamer/progress": {
+            "get": {
+                "tags": [
+                    "Streamer"
+                ],
+                "summary": "get current month progress for streamer",
+                "parameters": [],
+                "responses": {
+                    "200": {
+                        "description": "",
+                        "content": {
+                            "application/json": {
+                                "schema": {}
+                            }
+                        },
+                        "headers": {}
+                    }
+                },
+                "security": [{
+                    "httpBearer": []
+                }],
+                "deprecated": false
+            }
+        },
+        "/info/terms": {
+            "get": {
+                "tags": [
+                    "App Info"
+                ],
+                "summary": "Get Terms And Conditions",
+                "operationId": "GetTermsAndConditions",
+                "parameters": [],
+                "responses": {
+                    "200": {
+                        "description": "",
+                        "content": {
+                            "application/json": {
+                                "schema": {}
+                            }
+                        },
+                        "headers": {}
+                    }
+                },
+                "deprecated": false
+            }
+        },
+        "/info/events": {
+            "get": {
+                "tags": [
+                    "App Info"
+                ],
+                "summary": "Get Events",
+                "operationId": "GetEvents",
+                "parameters": [{
+                    "name": "page",
+                    "in": "query",
+                    "description": "optional",
+                    "required": false,
+                    "style": "form",
+                    "explode": true,
+                    "schema": {
+                        "type": "integer",
+                        "format": "int32",
+                        "example": 1
+                    }
+                }],
+                "responses": {
+                    "200": {
+                        "description": "",
+                        "content": {
+                            "application/json": {
+                                "schema": {}
+                            }
+                        },
+                        "headers": {}
+                    }
+                },
+                "security": [{
+                    "httpBearer": []
+                }],
+                "deprecated": false
+            }
+        },
+        "/info/ads": {
+            "get": {
+                "tags": [
+                    "App Info"
+                ],
+                "summary": "Get Ads",
+                "operationId": "GetAds",
+                "parameters": [{
+                    "name": "page",
+                    "in": "query",
+                    "description": "optional",
+                    "required": false,
+                    "style": "form",
+                    "explode": true,
+                    "schema": {
+                        "type": "integer",
+                        "format": "int32",
+                        "example": 1
+                    }
+                }],
+                "responses": {
+                    "200": {
+                        "description": "",
+                        "content": {
+                            "application/json": {
+                                "schema": {}
+                            }
+                        },
+                        "headers": {}
+                    }
+                },
+                "security": [{
+                    "httpBearer": []
+                }],
+                "deprecated": false
+            }
+        },
+        "/info/leaderboard": {
+            "get": {
+                "tags": [
+                    "App Info"
+                ],
+                "summary": "Get top users",
+                "parameters": [{
+                    "name": "room_id",
+                    "in": "query",
+                    "description": "optional",
+                    "required": false,
+                    "schema": {
+                        "type": "integer",
+                        "format": "int32",
+                        "example": 19
+                    }
+                }],
+                "responses": {
+                    "200": {
+                        "description": "users divided into sender and receiver each divided into dialy weekly and monthly",
+                        "content": {
+                            "application/json": {
+                                "schema": {}
+                            }
+                        },
+                        "headers": {}
+                    }
+                },
+                "security": [{
+                    "httpBearer": []
+                }],
+                "deprecated": false
+            }
+        },
+        "/info/words": {
+            "get": {
+                "tags": [
+                    "App Info"
+                ],
+                "summary": "Get Prohibited Words",
+
+                "responses": {
+                    "200": {
+                        "description": "Get prohibited words in chat.",
+                        "content": {
+                            "application/json": {
+                                "schema": {}
+                            }
+                        },
+                        "headers": {}
+                    }
+                },
+                "security": [{
+                    "httpBearer": []
+                }],
+                "deprecated": false
+            }
+        },
+
+
+        "/v1/backgrounds": {
+            "get": {
+                "tags": [
+                    "Backgrounds"
+                ],
+                "summary": "Get Backgrounds",
+                "operationId": "GetBackgrounds",
+                "parameters": [],
+                "responses": {
+                    "200": {
+                        "description": "all backgrounds paginated (50 items per page)",
+                        "content": {
+                            "application/json": {
+                                "schema": {}
+                            }
+                        },
+                        "headers": {}
+                    }
+                },
+                "security": [{
+                    "httpBearer": []
+                }],
+                "deprecated": false
+            }
+        },
+        "/profile/pin/create": {
+            "post": {
+                "tags": [
+                    "Profile"
+                ],
+                "summary": "Create Payment Pin",
+                "operationId": "CreatePaymentPin",
+                "parameters": [],
+                "requestBody": {
+                    "content": {
+                        "application/x-www-form-urlencoded": {
+                            "encoding": {},
+                            "schema": {
+                                "required": [
+                                    "password_current",
+                                    "payment_pin"
+                                ],
+                                "type": "object",
+                                "properties": {
+                                    "password_current": {
+                                        "type": "string",
+                                        "example": "123456"
+                                    },
+                                    "payment_pin": {
+                                        "type": "string",
+                                        "example": "1111"
+                                    }
+                                }
+                            }
+                        }
+                    },
+                    "required": false,
+                    "x-send-file-in-body": false
+                },
+                "responses": {
+                    "200": {
+                        "description": "",
+                        "content": {
+                            "application/json": {
+                                "schema": {}
+                            }
+                        },
+                        "headers": {}
+                    }
+                },
+                "security": [{
+                    "httpBearer": []
+                }],
+                "deprecated": false
+            }
+        },
+        "/profile/pin/change": {
+            "post": {
+                "tags": [
+                    "Profile"
+                ],
+                "summary": "Change Payment Pin",
+                "operationId": "ChangePaymentPin",
+                "parameters": [],
+                "requestBody": {
+                    "content": {
+                        "application/x-www-form-urlencoded": {
+                            "encoding": {},
+                            "schema": {
+                                "required": [
+                                    "password_current",
+                                    "payment_pin_current",
+                                    "payment_pin_new"
+                                ],
+                                "type": "object",
+                                "properties": {
+                                    "password_current": {
+                                        "type": "string",
+                                        "example": "123456"
+                                    },
+                                    "payment_pin_current": {
+                                        "type": "string",
+                                        "example": "1111"
+                                    },
+                                    "payment_pin_new": {
+                                        "type": "string",
+                                        "example": "1122"
+                                    }
+                                }
+                            }
+                        }
+                    },
+                    "required": false,
+                    "x-send-file-in-body": false
+                },
+                "responses": {
+                    "200": {
+                        "description": "",
+                        "content": {
+                            "application/json": {
+                                "schema": {}
+                            }
+                        },
+                        "headers": {}
+                    }
+                },
+                "security": [{
+                    "httpBearer": []
+                }],
+                "deprecated": false
+            }
+        },
+
+
+        "/payment/prepare/checkout": {
+            "post": {
+                "tags": [
+                    "Payment"
+                ],
+                "summary": "Hyper Pay payment gatway  (prepare checkout api) ",
+                "operationId": "preparecheckoutapi",
+                "parameters": [],
+                "requestBody": {
+                    "content": {
+                        "multipart/form-data": {
+                            "encoding": {},
+                            "schema": {
+                                "required": [
+                                    "amount",
+                                    "email",
+                                    "street",
+                                    "city",
+                                    "state",
+                                    "country",
+                                    "postcode",
+                                    "givenName",
+                                    "surname",
+                                    "visa_or_mada"
+                                ],
+                                "type": "object",
+                                "properties": {
+                                    "amount": {
+                                        "type": "double",
+                                        "example": "200",
+                                        "description": "paid amount"
+                                    },
+                                    "email": {
+                                        "type": "string",
+                                        "example": "admin@site.com "
+                                    },
+                                    "street": {
+                                        "type": "string",
+                                        "example": "25 salah salem "
+                                    },
+                                    "city": {
+                                        "type": "naser city",
+                                        "example": "cairo"
+                                    },
+                                    "state": {
+                                        "type": "string",
+                                        "example": "cairo"
+                                    },
+                                    "country": {
+                                        "type": "string",
+                                        "example": "EG",
+                                        "description": "The country of the billing address (ISO 3166-1) that has two character "
+                                    },
+                                    "postcode": {
+                                        "type": "string",
+                                        "example": "131242"
+                                    },
+                                    "givenName": {
+                                        "type": "string",
+                                        "example": "test"
+                                    },
+                                    "surname": {
+                                        "type": "string",
+                                        "example": "test name "
+                                    },
+                                    "visa_or_mada": {
+                                        "type": "string",
+                                        "example": "1",
+                                        "description": "input (1) if you pay via visa and mastercart or (2) if you pay with Mada"
+                                    }
+                                }
+                            }
+                        }
+                    },
+                    "required": false,
+                    "x-send-file-in-body": false
+                },
+                "responses": {
+                    "200": {
+                        "description": "",
+                        "content": {
+                            "application/json": {
+                                "schema": {}
+                            }
+                        },
+                        "headers": {}
+                    }
+                },
+                "security": [{
+                    "httpBearer": []
+                }],
+                "deprecated": false
+            }
+        },
+
+
+
+
+
+        "/room": {
+            "get": {
+                "tags": [
+                    "Rooms"
+                ],
+                "summary": "Get my room",
+                "parameters": [],
+                "responses": {
+                    "200": {
+                        "description": "",
+                        "content": {
+                            "application/json": {
+                                "schema": {}
+                            }
+                        },
+                        "headers": {}
+                    }
+                },
+                "security": [{
+                    "httpBearer": []
+                }],
+                "deprecated": false
+            }
+        },
+        "/room/index": {
+            "get": {
+                "tags": [
+                    "Rooms"
+                ],
+                "summary": "Get room details",
+                "parameters": [
+                    {
+                        "name": "status",
+                        "in": "query",
+                        "required": false,
+                        "schema": {
+                            "type": "string",
+                            "example": "active"
+                        }
+                    }
+                ],
+                "responses": {
+                    "200": {
+                        "description": "",
+                        "content": {
+                            "application/json": {
+                                "schema": {}
+                            }
+                        },
+                        "headers": {}
+                    }
+                },
+                "security": [{
+                    "httpBearer": []
+                }],
+                "deprecated": false
+            }
+        },
+        "/room/details": {
+            "get": {
+                "tags": [
+                    "Rooms"
+                ],
+                "summary": "Get room details",
+                "operationId": "GetRoomDetails",
+                "parameters": [
+                    {
+                        "name": "id",
+                        "in": "query",
+                        "required": true,
+                        "schema": {
+                            "type": "integer",
+                            "example": 1
+                        }
+                    }
+                ],
+                "responses": {
+                    "200": {
+                        "description": "",
+                        "content": {
+                            "application/json": {
+                                "schema": {}
+                            }
+                        },
+                        "headers": {}
+                    }
+                },
+                "security": [{
+                    "httpBearer": []
+                }],
+                "deprecated": false
+            }
+        },
+        "/room/create": {
+            "post": {
+                "tags": [
+                    "Rooms"
+                ],
+                "summary": "Create room",
+                "operationId": "CreateRoom",
+                "parameters": [],
+                "requestBody": {
+                    "content": {
+                        "application/x-www-form-urlencoded": {
+                            "encoding": {},
+                            "schema": {
+                                "required": [
+                                    "name"
+                                ],
+                                "type": "object",
+                                "properties": {
+                                    "name": {
+                                        "type": "string",
+                                        "example": "room"
+                                    },
+                                    "type": {
+                                        "type": "string",
+                                        "example": "public",
+                                        "description": "accepted values: public, private"
+                                    },
+                                    "password": {
+                                        "type": "string",
+                                        "example": "password"
+                                    },
+                                    "music": {
+                                        "type": "string",
+                                        "format": "binary"
+                                    },
+                                    "background": {
+                                        "type": "string",
+                                        "format": "binary"
+                                    }
+                                }
+
+                            }
+                        }
+                    },
+                    "required": false,
+                    "x-send-file-in-body": false
+                },
+                "responses": {
+                    "200": {
+                        "description": "",
+                        "content": {
+                            "application/json": {
+                                "schema": {}
+                            }
+                        },
+                        "headers": {}
+                    }
+                },
+                "security": [{
+                    "httpBearer": []
+                }],
+                "deprecated": false
+            }
+        },
+        "/room/update": {
+            "post": {
+                "tags": [
+                    "Rooms"
+                ],
+                "summary": "update room",
+                "parameters": [],
+                "requestBody": {
+                    "content": {
+                        "multipart/form-data": {
+                            "encoding": {},
+                            "schema": {
+                                "required": [
+                                    "room_id"
+                                ],
+                                "type": "object",
+                                "properties": {
+                                    "name": {
+                                        "type": "string",
+                                        "example": "room"
+                                    },
+                                    "status": {
+                                        "type": "string",
+                                        "example": "active",
+                                        "description": "accepted values: active, inactive"
+                                    },
+                                    "type": {
+                                        "type": "string",
+                                        "example": "public",
+                                        "description": "accepted values: public, private"
+                                    },
+                                    "password": {
+                                        "type": "string",
+                                        "example": "password"
+                                    },
+                                    "music": {
+                                        "type": "string",
+                                        "format": "binary"
+                                    },
+                                    "background": {
+                                        "type": "string",
+                                        "format": "binary"
+                                    },
+                                    "show_calculator": {
+                                        "type": "boolean"
+                                    },
+                                    "music_volume": {
+                                        "type": "double"
+                                    }
+                                }
+                            }
+                        }
+                    },
+                    "required": false,
+                    "x-send-file-in-body": false
+                },
+                "responses": {
+                    "200": {
+                        "description": "",
+                        "content": {
+                            "application/json": {
+                                "schema": {}
+                            }
+                        },
+                        "headers": {}
+                    }
+                },
+                "security": [{
+                    "httpBearer": []
+                }],
+                "deprecated": false
+            }
+        },
+        "/room/message": {
+            "post": {
+                "tags": [
+                    "Rooms"
+                ],
+                "summary": "send chat message",
+                "operationId": "CreateRoom",
+                "parameters": [],
+                "requestBody": {
+                    "content": {
+                        "application/x-www-form-urlencoded": {
+                            "encoding": {},
+                            "schema": {
+                                "required": [
+                                    "room_id",
+                                    "message"
+                                ],
+                                "type": "object",
+                                "properties": {
+                                    "room_id": {
+                                        "type": "integer",
+                                        "example": 1
+                                    },
+                                    "message": {
+                                        "type": "string",
+                                        "example": "Hello world!"
+                                    }
+                                }
+
+                            }
+                        }
+                    },
+                    "required": false,
+                    "x-send-file-in-body": false
+                },
+                "responses": {
+                    "200": {
+                        "description": "",
+                        "content": {
+                            "application/json": {
+                                "schema": {}
+                            }
+                        },
+                        "headers": {}
+                    }
+                },
+                "security": [{
+                    "httpBearer": []
+                }],
+                "deprecated": false
+            }
+        },
+
+        "/room/diamonds": {
+            "get": {
+                "tags": [
+                    "Rooms"
+                ],
+                "summary": "Get driver diamonds",
+                "parameters": [
+                    {
+                        "name": "channel_sid",
+                        "in": "query",
+                        "required": true,
+                        "schema": {
+                            "type": "string",
+                            "example": "CHXXXXXXXXX"
+                        }
+                    }
+                ],
+                "responses": {
+                    "200": {
+                        "description": "",
+                        "content": {
+                            "application/json": {
+                                "schema": {}
+                            }
+                        },
+                        "headers": {}
+                    }
+                },
+                "security": [{
+                    "httpBearer": []
+                }],
+                "deprecated": false
+            }
+        },
+
+        "/room/driver/mute": {
+            "post": {
+                "tags": [
+                    "Rooms"
+                ],
+                "summary": "mark driver as muted or unmuted",
+                "parameters": [],
+                "requestBody": {
+                    "content": {
+                        "application/x-www-form-urlencoded": {
+                            "encoding": {},
+                            "schema": {
+                                "required": [
+                                    "room_id",
+                                    "muted"
+                                ],
+                                "type": "object",
+                                "properties": {
+                                    "room_id": {
+                                        "type": "integer",
+                                        "example": 1
+                                    },
+                                    "user_id": {
+                                        "type": "integer",
+                                        "example": 1
+                                    },
+                                    "muted": {
+                                        "type": "integer",
+                                        "example": 1,
+                                        "description": "0 or 1"
+                                    }
+                                }
+
+                            }
+                        }
+                    },
+                    "required": false,
+                    "x-send-file-in-body": false
+                },
+                "responses": {
+                    "200": {
+                        "description": "",
+                        "content": {
+                            "application/json": {
+                                "schema": {}
+                            }
+                        },
+                        "headers": {}
+                    }
+                },
+                "security": [{
+                    "httpBearer": []
+                }],
+                "deprecated": false
+            }
+        },
+        "/room/user/block": {
+            "post": {
+                "tags": [
+                    "Rooms"
+                ],
+                "summary": "add or remove from room's blacklist",
+                "parameters": [],
+                "requestBody": {
+                    "content": {
+                        "application/x-www-form-urlencoded": {
+                            "encoding": {},
+                            "schema": {
+                                "required": [
+                                    "room_id",
+                                    "user_id",
+                                    "block"
+                                ],
+                                "type": "object",
+                                "properties": {
+                                    "room_id": {
+                                        "type": "integer",
+                                        "example": 1
+                                    },
+                                    "user_id": {
+                                        "type": "integer",
+                                        "example": 1
+                                    },
+                                    "block": {
+                                        "type": "integer",
+                                        "example": 1,
+                                        "description": "0 or 1"
+                                    }
+                                }
+
+                            }
+                        }
+                    },
+                    "required": false,
+                    "x-send-file-in-body": false
+                },
+                "responses": {
+                    "200": {
+                        "description": "",
+                        "content": {
+                            "application/json": {
+                                "schema": {}
+                            }
+                        },
+                        "headers": {}
+                    }
+                },
+                "security": [{
+                    "httpBearer": []
+                }],
+                "deprecated": false
+            }
+        },
+        "/room/driver/request": {
+            "post": {
+                "tags": [
+                    "Rooms"
+                ],
+                "summary": "request to sit on a seat",
+                "parameters": [],
+                "requestBody": {
+                    "content": {
+                        "application/x-www-form-urlencoded": {
+                            "encoding": {},
+                            "schema": {
+                                "required": [
+                                    "room_id",
+                                    "sit_num"
+                                ],
+                                "type": "object",
+                                "properties": {
+                                    "room_id": {
+                                        "type": "integer",
+                                        "example": 1
+                                    },
+                                    "sit_num": {
+                                        "type": "int32"
+                                    }
+                                }
+
+                            }
+                        }
+                    },
+                    "required": false,
+                    "x-send-file-in-body": false
+                },
+                "responses": {
+                    "200": {
+                        "description": "",
+                        "content": {
+                            "application/json": {
+                                "schema": {}
+                            }
+                        },
+                        "headers": {}
+                    }
+                },
+                "security": [{
+                    "httpBearer": []
+                }],
+                "deprecated": false
+            }
+        },
+        "/room/driver/response": {
+            "post": {
+                "tags": [
+                    "Rooms"
+                ],
+                "summary": "approve or deny a driver request",
+                "parameters": [],
+                "requestBody": {
+                    "content": {
+                        "application/x-www-form-urlencoded": {
+                            "encoding": {},
+                            "schema": {
+                                "required": [
+                                    "user_id",
+                                    "sit_num",
+                                    "response"
+                                ],
+                                "type": "object",
+                                "properties": {
+                                    "user_id": {
+                                        "type": "integer",
+                                        "example": 1
+                                    },
+                                    "sit_num": {
+                                        "type": "integer"
+                                    },
+                                    "resposne": {
+                                        "type": "integer",
+                                        "description": "0 or 1"
+                                    }
+                                }
+
+                            }
+                        }
+                    },
+                    "required": false,
+                    "x-send-file-in-body": false
+                },
+                "responses": {
+                    "200": {
+                        "description": "",
+                        "content": {
+                            "application/json": {
+                                "schema": {}
+                            }
+                        },
+                        "headers": {}
+                    }
+                },
+                "security": [{
+                    "httpBearer": []
+                }],
+                "deprecated": false
+            }
+        },
+        "/room/driver/senders": {
+            "get": {
+                "tags": [
+                    "Rooms"
+                ],
+                "summary": "get list of charisma contributers for a specific driver",
+                "parameters": [
+                    {
+                        "name": "room_id",
+                        "in": "query",
+                        "required": true,
+                        "schema": {
+                            "type": "integer",
+                            "example": 1
+                        }
+                    },
+                    {
+                        "name": "sit_num",
+                        "in": "query",
+                        "required": true,
+                        "schema": {
+                            "type": "integer",
+                            "example": 1
+                        }
+                    }
+                ],
+                "responses": {
+                    "200": {
+                        "description": "",
+                        "content": {
+                            "application/json": {
+                                "schema": {}
+                            }
+                        },
+                        "headers": {}
+                    }
+                },
+                "security": [{
+                    "httpBearer": []
+                }],
+                "deprecated": false
+            }
+        },
+        "/room/sitDrivers": {
+            "post": {
+                "tags": [
+                    "Rooms"
+                ],
+                "summary": "Sit room drivers",
+                "operationId": "SitRoomDriver",
+                "parameters": [],
+                "requestBody": {
+                    "content": {
+                        "application/x-www-form-urlencoded": {
+                            "encoding": {},
+                            "schema": {
+                                "required": [
+                                    "room_id",
+                                    "sit_num",
+                                    "action"
+                                ],
+                                "type": "object",
+                                "properties": {
+                                    "room_id": {
+                                        "type": "integer",
+                                        "example": 1
+                                    },
+                                    "sit_num": {
+                                        "type": "int32"
+                                    },
+                                    "user_id": {
+                                        "type": "integer"
+                                    },
+                                    "action": {
+                                        "type": "string",
+                                        "description": "connect, disconnect, lock, unlock"
+                                    },
+                                    "status": {
+                                        "type": "string",
+                                        "description": "active or inactive (use this to set room inactive when admin exits)"
+                                    }
+                                }
+
+                            }
+                        }
+                    },
+                    "required": false,
+                    "x-send-file-in-body": false
+                },
+                "responses": {
+                    "200": {
+                        "description": "",
+                        "content": {
+                            "application/json": {
+                                "schema": {}
+                            }
+                        },
+                        "headers": {}
+                    }
+                },
+                "security": [{
+                    "httpBearer": []
+                }],
+                "deprecated": false
+            }
+        },
+
+        "/room/members/count": {
+            "get": {
+                "tags": [
+                    "Rooms"
+                ],
+                "summary": "Room Members -Hoster and drivers and visitors- Count",
+                "operationId": "GetRoomMembersCount",
+                "parameters": [
+                    {
+                        "name": "id",
+                        "in": "query",
+                        "required": true,
+                        "schema": {
+                            "type": "integer",
+                            "example": 1
+                        }
+                    }
+                ],
+                "responses": {
+                    "200": {
+                        "description": "",
+                        "content": {
+                            "application/json": {
+                                "schema": {}
+                            }
+                        },
+                        "headers": {}
+                    }
+                },
+                "security": [{
+                    "httpBearer": []
+                }],
+                "deprecated": false
+            }
+        },
+
+
+
+
+
+
+        "/room/musiclist/get": {
+            "get": {
+                "tags": [
+                    "RoomMusicList"
+                ],
+                "summary": "Get Room Music List",
+                "operationId": "GetRoomMusicList",
+                "parameters": [
+                    {
+                        "name": "room_id",
+                        "in": "query",
+                        "required": true,
+                        "schema": {
+                            "type": "integer",
+                            "example": 1
+                        }
+                    }
+                ],
+                "responses": {
+                    "200": {
+                        "description": "",
+                        "content": {
+                            "application/json": {
+                                "schema": {}
+                            }
+                        },
+                        "headers": {}
+                    }
+                },
+                "security": [{
+                    "httpBearer": []
+                }],
+                "deprecated": false
+            }
+        },
+
+        "/room/musiclist/update": {
+            "post": {
+                "tags": [
+                    "RoomMusicList"
+                ],
+                "summary": "Update Room Music List",
+                "operationId": "UpdateRoomMusicList",
+                "parameters": [],
+                "requestBody": {
+                    "content": {
+                        "application/x-www-form-urlencoded": {
+                            "encoding": {},
+                            "schema": {
+                                "required": [
+                                    "music_id"
+                                ],
+                                "type": "object",
+                                "properties": {
+                                    "music_id": {
+                                        "type": "integer",
+                                        "example": 1
+                                    },
+                                    "is_active": {
+                                        "type": "integer",
+                                        "example": 1
+                                    },
+                                    "start_time": {
+                                        "type": "integer",
+                                        "example": 1
+                                    },
+                                    "is_played": {
+                                        "type": "integer",
+                                        "example": 1
+                                    },
+                                    "seek_to": {
+                                        "type": "integer",
+                                        "example": 1
+                                    },
+                                    "music_volume": {
+                                        "type": "number",
+                                        "example": 1
+                                    }
+                                }
+
+                            }
+                        }
+                    },
+                    "required": false,
+                    "x-send-file-in-body": false
+                },
+                "responses": {
+                    "200": {
+                        "description": "",
+                        "content": {
+                            "application/json": {
+                                "schema": {}
+                            }
+                        },
+                        "headers": {}
+                    }
+                },
+                "security": [{
+                    "httpBearer": []
+                }],
+                "deprecated": false
+            }
+        },
+
+        "/room/musiclist/upload": {
+            "post": {
+                "tags": [
+                    "RoomMusicList"
+                ],
+                "summary": "Upload New Room Music",
+                "operationId": "UploadNewRoomMusic",
+                "parameters": [],
+                "requestBody": {
+                    "content": {
+                        "application/x-www-form-urlencoded": {
+                            "encoding": {},
+                            "schema": {
+                                "required": [
+                                    "room_id",
+                                    "name"
+
+                                ],
+                                "type": "object",
+                                "properties": {
+                                    "room_id": {
+                                        "type": "integer",
+                                        "example": 1
+                                    },
+                                    "name": {
+                                        "type": "string",
+                                        "example": "music5"
+                                    },
+                                    "music": {
+                                        "type": "integer",
+                                        "example": "url"
+                                    },
+                                    "music_url": {
+                                        "type": "integer",
+                                        "example": "url"
+                                    }
+
+                                }
+
+                            }
+                        }
+                    },
+                    "required": false,
+                    "x-send-file-in-body": false
+                },
+                "responses": {
+                    "200": {
+                        "description": "",
+                        "content": {
+                            "application/json": {
+                                "schema": {}
+                            }
+                        },
+                        "headers": {}
+                    }
+                },
+                "security": [{
+                    "httpBearer": []
+                }],
+                "deprecated": false
+            }
+        },
+
+        "/room/musiclist/delete": {
+            "get": {
+                "tags": [
+                    "RoomMusicList"
+                ],
+                "summary": "Delete Room Music",
+                "operationId": "DeleteRoomMusic",
+                "parameters": [
+                    {
+                        "name": "music_id",
+                        "in": "query",
+                        "required": true,
+                        "schema": {
+                            "type": "integer",
+                            "example": 1
+                        }
+                    }
+                ],
+                "responses": {
+                    "200": {
+                        "description": "",
+                        "content": {
+                            "application/json": {
+                                "schema": {}
+                            }
+                        },
+                        "headers": {}
+                    }
+                },
+                "security": [{
+                    "httpBearer": []
+                }],
+                "deprecated": false
+            }
+        },
+
+
+
+
+
+        "/room/guessgame/": {
+            "get": {
+                "tags": [
+                    "GuessGame"
+                ],
+                "summary": "Get GuessGame Shapes and Diamond Packages",
+                "operationId": "GetGuessGame",
+                "parameters": [
+
+                ],
+                "responses": {
+                    "200": {
+                        "description": "",
+                        "content": {
+                            "application/json": {
+                                "schema": {}
+                            }
+                        },
+                        "headers": {}
+                    }
+                },
+                "security": [{
+                    "httpBearer": []
+                }],
+                "deprecated": false
+            }
+        },
+        "/room/guessgame/start": {
+            "post": {
+                "tags": [
+                    "GuessGame"
+                ],
+                "summary": "Start Game",
+                "operationId": "StartGuessGame",
+                "parameters": [],
+                "requestBody": {
+                    "content": {
+                        "application/x-www-form-urlencoded": {
+                            "encoding": {},
+                            "schema": {
+                                "required": [
+                                    "room_id",
+                                    "shape_id",
+                                    "package_id"
+                                ],
+                                "type": "object",
+                                "properties": {
+                                    "room_id": {
+                                        "type": "integer",
+                                        "example": 1
+                                    },
+                                    "shape_id": {
+                                        "type": "integer",
+                                        "example": 1
+                                    },
+                                    "package_id": {
+                                        "type": "integer",
+                                        "example": 1
+                                    }
+                                }
+
+                            }
+                        }
+                    },
+                    "required": false,
+                    "x-send-file-in-body": false
+                },
+                "responses": {
+                    "200": {
+                        "description": "",
+                        "content": {
+                            "application/json": {
+                                "schema": {}
+                            }
+                        },
+                        "headers": {}
+                    }
+                },
+                "security": [{
+                    "httpBearer": []
+                }],
+                "deprecated": false
+            }
+        },
+        "/room/guessgame/accept": {
+            "post": {
+                "tags": [
+                    "GuessGame"
+                ],
+                "summary": "Accept and Finish Game",
+                "operationId": "AcceptGuessGame",
+                "parameters": [],
+                "requestBody": {
+                    "content": {
+                        "application/x-www-form-urlencoded": {
+                            "encoding": {},
+                            "schema": {
+                                "required": [
+                                    "game_id",
+                                    "shape_id"
+                                ],
+                                "type": "object",
+                                "properties": {
+                                    "game_id": {
+                                        "type": "integer",
+                                        "example": 1
+                                    },
+                                    "shape_id": {
+                                        "type": "integer",
+                                        "example": 1
+                                    }
+                                }
+
+                            }
+                        }
+                    },
+                    "required": false,
+                    "x-send-file-in-body": false
+                },
+                "responses": {
+                    "200": {
+                        "description": "",
+                        "content": {
+                            "application/json": {
+                                "schema": {}
+                            }
+                        },
+                        "headers": {}
+                    }
+                },
+                "security": [{
+                    "httpBearer": []
+                }],
+                "deprecated": false
+            }
+        },
+
+
+
+
+
+
+        "/conversation/index": {
+            "get": {
+                "tags": [
+                    "Chat"
+                ],
+                "summary": "Get my conversations",
+                "parameters": [
+                    {
+                        "name": "search",
+                        "in": "query",
+                        "required": false,
+                        "schema": {
+                            "type": "string",
+                            "example": "user"
+                        }
+                    }
+                ],
+                "responses": {
+                    "200": {
+                        "description": "",
+                        "content": {
+                            "application/json": {
+                                "schema": {}
+                            }
+                        },
+                        "headers": {}
+                    }
+                },
+                "security": [{
+                    "httpBearer": []
+                }],
+                "deprecated": false
+            }
+        },
+        "/conversation/messages": {
+            "get": {
+                "tags": [
+                    "Chat"
+                ],
+                "summary": "Get conversation message list (paginated)",
+                "parameters": [
+                    {
+                        "name": "conversation_id",
+                        "in": "query",
+                        "required": false,
+                        "schema": {
+                            "type": "integer",
+                            "example": 1
+                        }
+                    },
+                    {
+                        "name": "user_id",
+                        "in": "query",
+                        "required": false,
+                        "schema": {
+                            "type": "integer",
+                            "example": 1
+                        }
+                    },
+                    {
+                        "name": "page",
+                        "in": "query",
+                        "required": false,
+                        "schema": {
+                            "type": "integer"
+                        }
+                    }
+                ],
+                "responses": {
+                    "200": {
+                        "description": "",
+                        "content": {
+                            "application/json": {
+                                "schema": {}
+                            }
+                        },
+                        "headers": {}
+                    }
+                },
+                "security": [{
+                    "httpBearer": []
+                }],
+                "deprecated": false
+            }
+        },
+        "/conversation/send": {
+            "post": {
+                "tags": [
+                    "Chat"
+                ],
+                "summary": "send message",
+                "parameters": [],
+                "requestBody": {
+                    "content": {
+                        "application/x-www-form-urlencoded": {
+                            "encoding": {},
+                            "schema": {
+                                "required": [
+                                    "text"
+                                ],
+                                "type": "object",
+                                "properties": {
+                                    "conversation_id": {
+                                        "type": "integer",
+                                        "example": 1
+                                    },
+                                    "user_id": {
+                                        "type": "integer",
+                                        "example": 1
+                                    },
+                                    "text": {
+                                        "type": "string",
+                                        "example": "test message"
+                                    }
+                                }
+
+                            }
+                        }
+                    },
+                    "required": false,
+                    "x-send-file-in-body": false
+                },
+                "responses": {
+                    "200": {
+                        "description": "",
+                        "content": {
+                            "application/json": {
+                                "schema": {}
+                            }
+                        },
+                        "headers": {}
+                    }
+                },
+                "security": [{
+                    "httpBearer": []
+                }],
+                "deprecated": false
+            }
+        },
+
+
+
+        "/users/reports/create": {
+            "post": {
+                "tags": [
+                    "Report"
+                ],
+                "summary": "Report some user",
+                "parameters": [],
+                "requestBody": {
+                    "content": {
+                        "application/x-www-form-urlencoded": {
+                            "encoding": {},
+                            "schema": {
+                                "required": [
+                                    "reported_id",
+                                    "message"
+                                ],
+                                "type": "object",
+                                "properties": {
+                                    "reported_id": {
+                                        "type": "integer",
+                                        "example": 1
+                                    },
+                                    "message": {
+                                        "type": "string",
+                                        "example": "test message"
+                                    }
+                                }
+
+                            }
+                        }
+                    },
+                    "required": false,
+                    "x-send-file-in-body": false
+                },
+                "responses": {
+                    "200": {
+                        "description": "",
+                        "content": {
+                            "application/json": {
+                                "schema": {}
+                            }
+                        },
+                        "headers": {}
+                    }
+                },
+                "security": [{
+                    "httpBearer": []
+                }],
+                "deprecated": false
+            }
+        }
+
+
+
+    },
+    "components": {
+        "securitySchemes": {
+            "httpBearer": {
+                "type": "http",
+                "scheme": "bearer"
+            }
+        }
+    },
+    "tags": [
+        {
+            "name": "Auth",
+            "description": "this folder is used to make any auth(login,registration) requests"
+        },
+        {
+            "name": "Backgrounds"
+        },
+        {
+            "name": "Gift"
+        },
+        {
+            "name": "Store"
+        },
+        {
+            "name": "Profile"
+        },
+        {
+            "name": "Followers"
+        },
+        {
+            "name": "Friendship"
+        },
+        {
+            "name": "Users"
+        },
+        {
+            "name": "App Info"
+        },
+        {
+            "name": "Payment"
+        },
+        {
+            "name": "Countries"
+        },
+        {
+            "name": "Emoji"
+        },
+        {
+            "name": "Favorites"
+        },
+        {
+            "name": "Rooms"
+        },
+        {
+            "name": "RoomMusicList"
+        },
+        {
+            "name": "GuessGame"
+        },
+        {
+            "name": "Chat"
+        },
+        {
+            "name": "Report"
+        }
+    ]
+
+
+}
